@@ -7,7 +7,7 @@ class CustomUser(AbstractUser):
     role = models.CharField(max_length=1, choices=ROLES, default="2")
     email = models.EmailField(
         verbose_name="email address", max_length=255, unique=True,)
-    age = models.PositiveIntegerField(null=False, blank=False)
+    age = models.PositiveIntegerField(null=True, blank=True)
 
     # when admin/ opens in browser the sign in comes with email not username
     USERNAME_FIELD = "email"

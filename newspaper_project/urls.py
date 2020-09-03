@@ -22,5 +22,6 @@ urlpatterns = [
     path('users/', include('users.urls')),  # this is for the signup
     # this is by default the login and logout urls
     path('users/', include('django.contrib.auth.urls')),
+    path('articles/', include('articles.urls')),
     path('', include('pages.urls')),
 ]

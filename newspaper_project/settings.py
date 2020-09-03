@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     'users',
-    'pages'  # adding the user app
+    'pages',  # adding the user app
+    'articles',  # adding the articles app
 ]
+
+TIME_ZONE = 'Asia/Kathmandu'  # new
 
 AUTH_USER_MODEL = 'users.CustomUser'  # added for the user
 
@@ -127,6 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'

@@ -10,9 +10,19 @@
     &middot;
     <span class="text-muted">By {{ article.author }} | {{ article.created_at }}</span>
   </div>
-  <div class="card-body">{{ article.body }}</div>
-  <div class="card-footer text-center text-muted">
-    <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
+  <div class="card-body">
+    <p>{{ article.body }}</p>
+    <!-- Changes for the comments begins from here -->
+    <a href="{% url 'article_edit' article.pk %}">Edit </a> |
+    <a href="{% url 'article_delete' article.pk %}"> Delete</a>
+  </div>
+  <div class="card-footer">
+    {% for comment in article.comments.all %}
+    <p>
+      <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+      {{ comment }}
+    </p>
+    {% endfor %}
   </div>
 </div>
 <br />

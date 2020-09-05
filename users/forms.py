@@ -7,11 +7,11 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields + ('role', 'email', 'age',)
+        fields = ('username', 'email', 'role', 'age',)
 
 
 class CutsomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = UserChangeForm.Meta.fields
+        fields = ('username', 'email', 'role', 'age',)
